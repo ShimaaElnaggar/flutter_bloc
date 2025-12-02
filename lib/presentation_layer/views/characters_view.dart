@@ -5,8 +5,8 @@ class CharactersView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-    child: Text(" flutter"),
+    return  Container(
+    child: const Text(" flutter"),
     );
   }
 }
