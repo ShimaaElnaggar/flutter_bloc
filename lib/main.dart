@@ -1,3 +1,4 @@
+import 'package:breaking_bad_app/constants/strings.dart';
 import 'package:breaking_bad_app/helper/app_router.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: _appRouter.generateRoute,
+       initialRoute: charactersView,
     );
   }
 }

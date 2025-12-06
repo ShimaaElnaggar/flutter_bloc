@@ -1,4 +1,5 @@
 import 'package:breaking_bad_app/bussiness_logic_layer/cubit/character_cubit.dart';
+import 'package:breaking_bad_app/constants/strings.dart';
 import 'package:breaking_bad_app/data_layer/api/characters_api.dart';
 import 'package:breaking_bad_app/data_layer/repository/characters_repository.dart';
 import 'package:breaking_bad_app/presentation_layer/views/character_details_view.dart';
@@ -19,14 +20,14 @@ class AppRouter {
 
   Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case 'charactersView':
+      case charactersView:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => charactersCubit,
             child: const CharactersView(),
           ),
         );
-      case 'characterDetailsView':
+      case characterDetailsView:
         return MaterialPageRoute(
           builder: (_) => const CharacterDetailsView(),
         );
