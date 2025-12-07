@@ -1,6 +1,7 @@
 import 'package:breaking_bad_app/bussiness_logic_layer/cubit/character_cubit.dart';
 import 'package:breaking_bad_app/constants/colors.dart';
 import 'package:breaking_bad_app/data_layer/models/character.dart';
+import 'package:breaking_bad_app/presentation_layer/widgets/character_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,11 +13,11 @@ class CharactersView extends StatefulWidget {
 }
 
 class _CharactersViewState extends State<CharactersView> {
-  List<Character> allCharacters = [];
+  late List<Character> allCharacters;
   @override
   void initState() {
     super.initState();
-    // allCharacters= BlocProvider.of<CharacterCubit>(context).getAllCharacters();
+    BlocProvider.of<CharacterCubit>(context).getAllCharacters();
   }
 
   @override
@@ -62,33 +63,9 @@ class _CharactersViewState extends State<CharactersView> {
       shrinkWrap: true,
       physics: const ClampingScrollPhysics(),
       itemCount: allCharacters.length,
-      itemBuilder: buildGridItem,
-    );
-  }
-
-  Widget? buildGridItem(context, index) {
-    final character = allCharacters[index];
-    return Card(
-      child: Column(
-        children: [
-          Expanded(
-            child: Image.network(
-              character.img,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              character.name,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ],
-      ),
+      itemBuilder: (context, index) {
+        return CharacterItem(character: allCharacters[index]);
+      },
     );
   }
 }
