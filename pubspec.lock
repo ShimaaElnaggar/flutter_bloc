@@ -58,7 +58,7 @@ packages:
     source: hosted
     version: "1.18.0"
   connectivity_plus:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: connectivity_plus
       sha256: "33bae12a398f841c6cda09d1064212957265869104c478e5ad51e2fb26c3973c"
@@ -143,7 +143,7 @@ packages:
     source: hosted
     version: "4.0.0"
   flutter_offline:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_offline
       sha256: "6748cc6fc0429add12afa7cd1a6751bec65c83fdc13cb28dbb71c6ea7b30be55"
@@ -398,5 +398,5 @@ packages:
     source: hosted
     version: "6.5.0"
 sdks:
-  dart: ">=3.5.3 <4.0.0"
+  dart: ">=3.5.0 <4.0.0"
   flutter: ">=3.18.0-18.0.pre.54"
