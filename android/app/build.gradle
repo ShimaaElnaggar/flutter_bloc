@@ -6,16 +6,26 @@ plugins {
 
 android {
     namespace "com.example.breaking_bad_app"
-    compileSdkVersion 34
+    compileSdkVersion 36
+    ndkVersion "27.3.13750724"
 
 
     defaultConfig {
         applicationId "com.example.breaking_bad_app"
         minSdkVersion flutter.minSdkVersion
-        targetSdkVersion 34
+        targetSdkVersion 36
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
+    }
+
+     compileOptions {
+        sourceCompatibility JavaVersion.VERSION_20
+        targetCompatibility JavaVersion.VERSION_20
+    }
+
+    kotlinOptions {
+        jvmTarget = "20"
     }
 
     buildTypes {
@@ -32,5 +42,5 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
